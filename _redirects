@@ -1,0 +1,16 @@
+# Cloudflare Pages _redirects
+# Redirects www to apex, handle common misspellings
+
+# Redirect www to apex (canonical domain)
+https://www.syqacapital.com/* https://syqacapital.com/:splat 301!
+
+# Clean URLs — allow /firm to serve /firm.html
+/firm /firm.html 200
+/focus /focus.html 200
+/leadership /leadership.html 200
+/news /news.html 200
+/contact /contact.html 200
+/legal /legal.html 200
+
+# 404 fallback
+/* /index.html 404
