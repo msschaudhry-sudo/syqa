@@ -1,27 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#203B36">
 <meta name="format-detection" content="telephone=no">
-
-<title>SYQA Capital — An Asia-focused investment firm. Japan at the core.</title>
-<meta name="description" content="SYQA Capital Co., Ltd. is an Asia-focused investment firm. Japan at the core. Commercial real estate, hospitality, and real asset equity. Founded 2021.">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://syqacapital.com/">
-
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="SYQA Capital">
-<meta property="og:title" content="SYQA Capital — An Asia-focused investment firm. Japan at the core.">
-<meta property="og:description" content="An Asia-focused investment firm. Japan at the core. Disciplined in approach. Selective in focus.">
-<meta property="og:url" content="https://syqacapital.com/">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="ja_JP">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SYQA Capital">
-<meta name="twitter:description" content="An Asia-focused investment firm. Japan at the core.">
+<title>SYQA Capital — Preview</title>
+<meta name="description" content="SYQA Capital — preview (all pages bundled).">
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23203B36'/%3E%3Ctext x='16' y='21' font-family='serif' font-size='15' font-weight='300' fill='%23EDE7D8' text-anchor='middle' letter-spacing='0.5'%3ES%3C/text%3E%3Ccircle cx='16' cy='25' r='0.8' fill='%23B87333'/%3E%3C/svg%3E">
 
@@ -30,40 +16,372 @@
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css">
+<style>
+/* ============================================================
+ SYQA Capital — Shared Stylesheet
+ All pages use this single file. Edit once, update everywhere.
+ ============================================================ */
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "SYQA Capital Co., Ltd.",
-  "url": "https://syqacapital.com",
-  "email": "hello@syqacapital.com",
-  "foundingDate": "2021-06",
-  "description": "An Asia-focused investment firm. Japan at the core. Working across commercial real estate, hospitality, and real asset equity.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Marunouchi Nijubashi Building 2F, 3-2-2 Marunouchi",
-    "addressLocality": "Chiyoda-ku",
-    "addressRegion": "Tokyo",
-    "postalCode": "100-0005",
-    "addressCountry": "JP"
-  }
+:root{
+ --pine:#203B36;
+ --pine-1:#1A332F;
+ --pine-2:#28443F;
+ --pine-deep:#142824;
+ --copper:#B87333;
+ --copper-soft:#C9884C;
+ --bone:#EDE7D8;
+ --bone-2:#E5DECA;
+ --bone-3:#CFC8B4;
+ --ash:#C0BAA6;
+ --rule:rgba(237,231,216,0.18);
+ --rule-strong:rgba(237,231,216,0.32);
+ --rule-copper:rgba(184,115,51,0.45);
+ --maxw:1280px;
+ --pad:clamp(1.5rem,5vw,3.5rem);
 }
-</script>
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+ background:var(--pine);
+ color:var(--bone);
+ font-family:'Switzer','Noto Sans JP',sans-serif;
+ font-weight:300;
+ font-size:16px;
+ line-height:1.7;
+ -webkit-font-smoothing:antialiased;
+ overflow-x:hidden;
+ min-height:100vh;
+ letter-spacing:0.005em;
+}
+body::before{
+ content:'';position:fixed;inset:0;pointer-events:none;z-index:100;opacity:0.02;mix-blend-mode:overlay;
+ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);position:relative;z-index:1}
+
+/* ============ LOGO ============ */
+.syqa{display:inline-flex;align-items:center;gap:0.4em;text-decoration:none;color:var(--bone);line-height:1}
+.syqa-wm{font-family:'Switzer',sans-serif;font-weight:300;font-size:1em;letter-spacing:0.24em;color:inherit;line-height:1;text-indent:0.24em}
+.syqa-dot{width:0.24em;height:0.24em;background:var(--copper);border-radius:50%;flex-shrink:0;margin-left:-0.1em}
+
+/* ============ NAV ============ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:1.35rem 0;backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);background:rgba(32,59,54,0.75);border-bottom:1px solid transparent;transition:all .5s cubic-bezier(.2,.7,.2,1)}
+.nav.scr{border-bottom-color:var(--rule);padding:0.95rem 0;background:rgba(32,59,54,0.94)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.nav .syqa{font-size:1.15rem}
+.nav-l{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-l a{color:var(--bone-2);text-decoration:none;font-family:'Switzer',sans-serif;font-size:0.7rem;letter-spacing:0.24em;text-transform:uppercase;font-weight:400;transition:color .3s;position:relative}
+.nav-l a:hover{color:var(--bone)}
+.nav-l a::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--copper);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.nav-l a:hover::after,.nav-l a.active::after{transform:scaleX(1)}
+.nav-l a.active{color:var(--bone)}
+
+.lt{display:flex;align-items:center;border:1px solid var(--rule-strong);border-radius:999px;padding:2px;background:rgba(40,68,63,0.5)}
+.lt button{background:transparent;border:none;color:var(--bone-3);font-family:'Switzer',sans-serif;font-size:0.64rem;letter-spacing:0.2em;font-weight:500;padding:5px 13px;border-radius:999px;cursor:pointer;transition:all .3s}
+.lt button.active{color:var(--pine);background:var(--bone)}
+
+.bg{display:none;background:transparent;border:none;color:var(--bone);cursor:pointer;padding:6px;z-index:60;position:relative}
+.bg svg{display:block;width:22px;height:22px}
+.bg .ic-close{display:none}
+.bg.open .ic-menu{display:none}
+.bg.open .ic-close{display:block}
+
+/* ============ HERO (landing) ============ */
+.hero{min-height:100vh;min-height:100svh;padding:9rem 0 4rem;display:flex;flex-direction:column;justify-content:center;position:relative;background:linear-gradient(180deg,var(--pine) 0%,var(--pine-1) 100%)}
+.hero-inner{display:flex;flex-direction:column;gap:clamp(2.5rem,5vw,4.5rem)}
+.hero-eyebrow{font-family:'Switzer',sans-serif;font-size:0.68rem;letter-spacing:0.36em;text-transform:uppercase;color:var(--copper);font-weight:500;display:inline-flex;align-items:center;gap:1rem;margin-bottom:2rem}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--copper)}
+h1.hero-title{font-family:'Switzer',sans-serif;font-weight:400;font-size:clamp(2.1rem,6vw,5rem);line-height:1.08;letter-spacing:-0.025em;color:var(--bone);max-width:16ch}
+body.jp h1.hero-title{font-family:'Shippori Mincho B1',serif;font-weight:400;letter-spacing:0.005em;line-height:1.22;font-size:clamp(1.9rem,5vw,4rem)}
+.hero-meta{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:end}
+@media(min-width:860px){.hero-meta{grid-template-columns:1.5fr 1fr;gap:5rem}}
+.hero-sub{max-width:520px;font-size:clamp(0.96rem,1.1vw,1.05rem);line-height:1.75;color:var(--bone-2);font-weight:300}
+body.jp .hero-sub{line-height:1.95;font-family:'Noto Sans JP',sans-serif}
+.hero-locus{display:flex;flex-direction:column;gap:0.6rem;padding-left:1.5rem;border-left:1px solid var(--rule-strong)}
+.hero-locus .label{font-family:'Switzer',sans-serif;font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--ash);font-weight:500}
+.hero-locus .value{font-family:'Switzer',sans-serif;font-weight:300;font-size:1.3rem;letter-spacing:0.02em;color:var(--bone);line-height:1.15}
+body.jp .hero-locus .value{font-family:'Shippori Mincho B1',serif;font-weight:500;letter-spacing:0.005em}
+.hero-foot{display:flex;justify-content:space-between;align-items:center;padding-top:1.75rem;margin-top:auto;border-top:1px solid var(--rule);font-family:'Switzer',sans-serif;font-size:0.6rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--ash);font-weight:500;flex-wrap:wrap;gap:1rem}
+
+/* ============ PAGE HEADER (non-home pages) ============ */
+.pg-head{padding:10rem 0 4rem;background:linear-gradient(180deg,var(--pine) 0%,var(--pine-1) 100%);border-bottom:1px solid var(--rule)}
+.pg-head-eyebrow{font-family:'Switzer',sans-serif;font-size:0.64rem;letter-spacing:0.36em;text-transform:uppercase;color:var(--copper);font-weight:500;display:inline-flex;align-items:center;gap:1rem;margin-bottom:1.75rem}
+.pg-head-eyebrow::before{content:'';width:28px;height:1px;background:var(--copper)}
+.pg-head h1{font-family:'Switzer',sans-serif;font-weight:400;font-size:clamp(2rem,5.5vw,4.25rem);line-height:1.08;letter-spacing:-0.025em;color:var(--bone);max-width:18ch}
+body.jp .pg-head h1{font-family:'Shippori Mincho B1',serif;font-weight:400;letter-spacing:0.005em;line-height:1.22;font-size:clamp(1.75rem,4.5vw,3.5rem)}
+.pg-head-sub{max-width:620px;margin-top:2rem;font-size:clamp(1rem,1.15vw,1.1rem);line-height:1.75;color:var(--bone-2);font-weight:300}
+body.jp .pg-head-sub{line-height:1.95;font-family:'Noto Sans JP',sans-serif}
+
+/* ============ SECTIONS ============ */
+section.mod{padding:clamp(5rem,9vw,8rem) 0;position:relative}
+section.mod.alt{background:var(--pine-deep)}
+
+/* LIGHT (inverted palette — bone surface, pine text) — creates visual rhythm */
+section.mod.light{background:var(--bone);color:var(--pine)}
+section.mod.light .ml{color:var(--copper)}
+section.mod.light .ml .num{color:var(--copper)}
+section.mod.light h2.mt{color:var(--pine)}
+section.mod.light .mh{border-bottom-color:rgba(32,59,54,0.12)}
+section.mod.light .mle{color:var(--pine-1)}
+section.mod.light .mle strong{color:var(--pine)}
+section.mod.light .prose{color:var(--pine-1)}
+section.mod.light .prose strong{color:var(--pine)}
+
+/* Leadership cards on light sections */
+section.mod.light .lc-full{background:rgba(32,59,54,0.04);border-color:rgba(32,59,54,0.10)}
+section.mod.light .lc-full:hover{background:rgba(32,59,54,0.08);border-color:var(--rule-copper)}
+section.mod.light .lc-avatar{background:var(--pine);border-color:var(--copper)}
+section.mod.light .lc-avatar::before{color:var(--copper-soft)}
+section.mod.light .lc-body .ro{color:var(--copper)}
+section.mod.light .lc-body h3{color:var(--pine)}
+section.mod.light .lc-body .tsub{color:var(--ash);border-bottom-color:rgba(32,59,54,0.12)}
+section.mod.light .lc-body p{color:var(--pine-1)}
+.mh{display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:clamp(3rem,5.5vw,5rem);padding-bottom:2.25rem;border-bottom:1px solid var(--rule)}
+@media(min-width:860px){.mh{grid-template-columns:220px 1fr;gap:5rem;align-items:baseline}}
+.ml{font-family:'Switzer',sans-serif;font-size:0.64rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--copper);font-weight:500;display:flex;align-items:center;gap:1rem}
+.ml .num{color:var(--copper-soft);font-size:0.64rem;letter-spacing:0.16em;font-weight:500}
+h2.mt{font-family:'Switzer',sans-serif;font-weight:400;font-size:clamp(1.75rem,4.2vw,3.25rem);line-height:1.12;letter-spacing:-0.025em;color:var(--bone);max-width:22ch}
+body.jp h2.mt{font-family:'Shippori Mincho B1',serif;font-weight:500;letter-spacing:0.005em;line-height:1.35;font-size:clamp(1.55rem,3.5vw,2.5rem)}
+.mle{max-width:780px;font-size:1.05rem;line-height:1.8;color:var(--bone-2);font-weight:300;margin-bottom:clamp(2.5rem,4.5vw,4rem)}
+body.jp .mle{line-height:1.95;font-family:'Noto Sans JP',sans-serif}
+.mle strong{color:var(--bone);font-weight:400}
+
+/* ============ PROSE (body text blocks on inner pages) ============ */
+.prose{max-width:780px;font-size:1.04rem;line-height:1.85;color:var(--bone-2);font-weight:300}
+.prose p{margin-bottom:1.6rem}
+.prose p:last-child{margin-bottom:0}
+body.jp .prose{line-height:1.95;font-family:'Noto Sans JP',sans-serif}
+.prose strong{color:var(--bone);font-weight:400}
+
+/* ============ FIRM (overview grid) ============ */
+.firm-grid{display:grid;grid-template-columns:1fr;gap:3.5rem}
+@media(min-width:860px){.firm-grid{grid-template-columns:1.5fr 1fr;gap:6rem;align-items:start}}
+.firm-side{padding:2.25rem 0 2.25rem 1.85rem;border-left:1px solid var(--rule-copper)}
+.firm-side-label{font-family:'Switzer',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--copper);font-weight:500;margin-bottom:1.85rem}
+.firm-side dl{display:flex;flex-direction:column;gap:1.4rem}
+.firm-side dt{font-family:'Switzer',sans-serif;font-size:0.56rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--ash);font-weight:500;margin-bottom:0.35rem}
+.firm-side dd{font-family:'Switzer',sans-serif;font-weight:300;font-size:0.98rem;letter-spacing:0.015em;color:var(--bone);line-height:1.4}
+body.jp .firm-side dd{font-family:'Noto Sans JP',sans-serif;font-weight:400;letter-spacing:0.005em}
+
+/* ============ PRINCIPLES ============ */
+.pl{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--rule)}
+@media(min-width:700px){.pl{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.pl{grid-template-columns:repeat(4,1fr)}}
+.plr{padding:2.75rem 0;border-bottom:1px solid var(--rule)}
+@media(min-width:700px){
+  .plr{padding:2.5rem 2rem 2.5rem 0;border-bottom:1px solid var(--rule);border-right:1px solid var(--rule)}
+  .plr:nth-child(2){padding-right:0;padding-left:2rem;border-right:none}
+  .plr:nth-child(3){border-bottom:none;padding-right:2rem;padding-left:0;border-right:1px solid var(--rule)}
+  .plr:nth-child(4){border-bottom:none;padding-left:2rem;padding-right:0;border-right:none}
+}
+@media(min-width:1000px){
+  .plr{padding:2.75rem 2rem 2.75rem 0;border-bottom:none;border-right:1px solid var(--rule)}
+  .plr:nth-child(1){padding-left:0}
+  .plr:nth-child(2),.plr:nth-child(3){padding-left:2rem}
+  .plr:nth-child(4){padding-left:2rem;padding-right:0;border-right:none}
+}
+.pln{font-family:'Switzer',sans-serif;font-size:0.62rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--copper-soft);font-weight:500;margin-bottom:1.65rem;display:block}
+.plr h3{font-family:'Switzer',sans-serif;font-weight:300;font-size:1.65rem;letter-spacing:0.02em;line-height:1.2;margin-bottom:0.4rem;color:var(--bone)}
+body.jp .plr h3{font-family:'Shippori Mincho B1',serif;font-weight:500;letter-spacing:0.005em}
+.plr h3 .sub{display:block;font-family:'Switzer',sans-serif;font-weight:400;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--bone-3);margin-top:0.85rem}
+.plr p{color:var(--bone-2);font-size:0.94rem;margin-top:1.65rem;line-height:1.8;font-weight:300}
+body.jp .plr p{line-height:1.95;font-family:'Noto Sans JP',sans-serif}
+
+/* ============ FOCUS CELLS ============ */
+.focus-grid{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--rule)}
+@media(min-width:860px){.focus-grid{grid-template-columns:repeat(3,1fr)}}
+.focus-cell{padding:2.75rem 0;border-bottom:1px solid var(--rule)}
+@media(min-width:860px){.focus-cell{padding:2.75rem 2.5rem 2.75rem 0;border-bottom:none;border-right:1px solid var(--rule)}.focus-cell:last-child{border-right:none;padding-right:0}.focus-cell:not(:first-child){padding-left:2.5rem}}
+.focus-num{font-family:'Switzer',sans-serif;font-size:0.62rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--copper-soft);font-weight:500;margin-bottom:1.65rem;display:block}
+.focus-cell h3{font-family:'Switzer',sans-serif;font-weight:300;font-size:1.55rem;letter-spacing:0.02em;line-height:1.2;margin-bottom:1.35rem;color:var(--bone)}
+body.jp .focus-cell h3{font-family:'Shippori Mincho B1',serif;font-weight:500;letter-spacing:0.005em}
+.focus-cell p{color:var(--bone-2);font-size:0.94rem;line-height:1.8;font-weight:300}
+body.jp .focus-cell p{line-height:1.95;font-family:'Noto Sans JP',sans-serif}
+
+/* ============ FOCUS DETAIL BLOCKS (focus page) ============ */
+.focus-block{padding:clamp(3rem,6vw,5rem) 0;border-bottom:1px solid var(--rule-copper)}
+.focus-block:last-child{border-bottom:none}
+.focus-block-grid{display:grid;grid-template-columns:1fr;gap:2.5rem}
+@media(min-width:860px){.focus-block-grid{grid-template-columns:260px 1fr;gap:5rem;align-items:start}}
+.focus-block-label{font-family:'Switzer',sans-serif;font-size:0.64rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--copper);font-weight:500;display:flex;align-items:center;gap:1rem}
+.focus-block-label .num{color:var(--copper-soft);letter-spacing:0.16em}
+.focus-block h3{font-family:'Switzer',sans-serif;font-weight:400;font-size:clamp(1.65rem,3vw,2.35rem);letter-spacing:0.015em;line-height:1.15;color:var(--bone);margin-bottom:1.5rem}
+body.jp .focus-block h3{font-family:'Shippori Mincho B1',serif;font-weight:500;letter-spacing:0.005em}
+.focus-block p{font-size:1rem;line-height:1.8;color:var(--bone-2);font-weight:300;margin-bottom:1.35rem;max-width:680px}
+.focus-block p:last-child{margin-bottom:0}
+body.jp .focus-block p{line-height:1.95;font-family:'Noto Sans JP',sans-serif}
+.focus-block strong{color:var(--bone);font-weight:400}
+
+/* ============ BAND QUOTE ============ */
+.band{padding:clamp(5rem,9vw,7rem) 0;border-top:1px solid var(--rule-copper);border-bottom:1px solid var(--rule-copper);background:var(--bone);text-align:center;position:relative}
+.band-quote{font-family:'Switzer',sans-serif;font-weight:300;font-size:clamp(1.35rem,2.6vw,2.05rem);line-height:1.45;color:var(--pine);max-width:740px;margin:0 auto;letter-spacing:-0.005em}
+body.jp .band-quote{font-family:'Shippori Mincho B1',serif;font-weight:500;letter-spacing:0.005em;line-height:1.65}
+.band-attribution{margin-top:2rem;font-family:'Switzer',sans-serif;font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--copper);font-weight:500}
+
+/* ============ CROSS-LINK CARDS (send to other pages) ============ */
+.xlink-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:clamp(3rem,5vw,4rem)}
+@media(min-width:760px){.xlink-grid{grid-template-columns:repeat(3,1fr)}}
+.xlink{display:block;padding:clamp(1.75rem,2.5vw,2.25rem);border:1px solid var(--rule);background:rgba(40,68,63,0.25);text-decoration:none;transition:all .5s;position:relative}
+.xlink:hover{border-color:var(--rule-copper);background:rgba(40,68,63,0.4);transform:translateY(-2px)}
+.xlink-label{font-family:'Switzer',sans-serif;font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--copper);font-weight:500;margin-bottom:1rem}
+.xlink h3{font-family:'Switzer',sans-serif;font-weight:300;font-size:clamp(1.25rem,1.7vw,1.5rem);letter-spacing:0.015em;line-height:1.2;color:var(--bone);margin-bottom:0.75rem}
+body.jp .xlink h3{font-family:'Shippori Mincho B1',serif;font-weight:500;letter-spacing:0.005em}
+.xlink p{font-size:0.9rem;line-height:1.7;color:var(--bone-2);font-weight:300}
+body.jp .xlink p{line-height:1.85;font-family:'Noto Sans JP',sans-serif}
+.xlink-arrow{display:inline-block;margin-top:1.25rem;font-family:'Switzer',sans-serif;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--copper);font-weight:500;transition:transform .3s}
+.xlink:hover .xlink-arrow{transform:translateX(4px)}
+
+/* ============ LEADERSHIP ============ */
+.lead-intro{max-width:780px;margin-bottom:clamp(2.5rem,5vw,4rem);font-size:1.04rem;line-height:1.8;color:var(--bone-2);font-weight:300}
+body.jp .lead-intro{line-height:1.95;font-family:'Noto Sans JP',sans-serif}
+
+.lg{display:grid;grid-template-columns:1fr;gap:1.85rem}
+@media(min-width:760px){.lg{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.lg{grid-template-columns:repeat(3,1fr)}}
+
+.lc{padding:clamp(2rem,2.85vw,2.5rem);border:1px solid var(--rule);background:rgba(40,68,63,0.25);transition:all .5s;position:relative;overflow:hidden;max-width:560px}
+.lc:hover{border-color:var(--rule-copper);background:rgba(40,68,63,0.4)}
+.lc .ro{font-family:'Switzer',sans-serif;font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--copper);font-weight:500;margin-bottom:1.2rem;display:flex;align-items:center;gap:0.75rem}
+.lc .ro::before{content:'';width:14px;height:1px;background:var(--copper)}
+.lc h3{font-family:'Switzer',sans-serif;font-weight:300;font-size:clamp(1.35rem,1.95vw,1.7rem);letter-spacing:0.02em;line-height:1.15;margin-bottom:0.5rem;color:var(--bone)}
+body.jp .lc h3{font-family:'Shippori Mincho B1',serif;font-weight:500;letter-spacing:0.005em}
+.lc .tsub{font-family:'Switzer',sans-serif;font-size:0.76rem;color:var(--bone-3);font-weight:400;margin-bottom:1.4rem;letter-spacing:0.02em;padding-bottom:1.15rem;border-bottom:1px solid var(--rule)}
+.lc p{font-size:0.9rem;line-height:1.75;color:var(--bone-2);font-weight:300;margin-bottom:0.9rem}
+.lc p:last-child{margin-bottom:0}
+body.jp .lc p{line-height:1.9;font-family:'Noto Sans JP',sans-serif}
+.lc .phd{color:var(--ash);font-size:0.84rem;padding-top:1.1rem;margin-top:1.1rem;border-top:1px solid var(--rule);font-weight:300;letter-spacing:0.005em}
+body.jp .lc .phd{font-family:'Noto Sans JP',sans-serif}
+
+/* Vertical list layout for full-width horizontal cards (new leadership layout) */
+.lg-v{display:flex;flex-direction:column;gap:1.25rem;max-width:960px}
+
+/* Full-width horizontal card with avatar */
+.lc-full{padding:clamp(1.75rem,2.5vw,2.5rem);border:1px solid var(--rule);background:rgba(40,68,63,0.25);transition:all .5s;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr;gap:1.5rem;align-items:start}
+@media(min-width:640px){.lc-full{grid-template-columns:auto 1fr;gap:2rem}}
+.lc-full:hover{border-color:var(--rule-copper);background:rgba(40,68,63,0.4)}
+
+.lc-avatar{width:88px;height:88px;border-radius:50%;background:var(--pine-2);border:1.5px solid var(--copper-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;position:relative}
+@media(min-width:640px){.lc-avatar{width:104px;height:104px}}
+.lc-avatar::before{content:attr(data-initials);font-family:'Switzer',sans-serif;font-weight:400;font-size:1.4rem;letter-spacing:0.04em;color:var(--copper-soft)}
+@media(min-width:640px){.lc-avatar::before{font-size:1.65rem}}
+.lc-avatar img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2}
+.lc-avatar:has(img)::before{display:none}
+
+.lc-body{min-width:0}
+.lc-body .ro{font-family:'Switzer',sans-serif;font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--copper);font-weight:500;margin-bottom:0.9rem;display:flex;align-items:center;gap:0.75rem}
+.lc-body .ro::before{content:'';width:14px;height:1px;background:var(--copper)}
+.lc-body h3{font-family:'Switzer',sans-serif;font-weight:400;font-size:clamp(1.3rem,1.75vw,1.55rem);letter-spacing:-0.01em;line-height:1.15;margin-bottom:0.4rem;color:var(--bone)}
+body.jp .lc-body h3{font-family:'Shippori Mincho B1',serif;font-weight:500;letter-spacing:0.005em}
+.lc-body .tsub{font-family:'Switzer',sans-serif;font-size:0.72rem;color:var(--bone-3);font-weight:400;margin-bottom:1.2rem;letter-spacing:0.14em;text-transform:uppercase;padding-bottom:1rem;border-bottom:1px solid var(--rule)}
+.lc-body p{font-size:0.92rem;line-height:1.75;color:var(--bone-2);font-weight:300;margin-bottom:0.8rem}
+.lc-body p:last-child{margin-bottom:0}
+body.jp .lc-body p{line-height:1.9;font-family:'Noto Sans JP',sans-serif}
+
+/* ============ NEWS ============ */
+.news-wrap{max-width:820px}
+.news-empty{padding:clamp(2.25rem,3.5vw,3rem);border:1px solid var(--rule);background:rgba(40,68,63,0.25);display:flex;flex-direction:column;gap:1.2rem}
+.news-empty .status{font-family:'Switzer',sans-serif;font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--bone-3);font-weight:500;display:flex;align-items:center;gap:0.75rem}
+.news-empty .status::before{content:'';width:14px;height:1px;background:var(--bone-3)}
+.news-empty h3{font-family:'Switzer',sans-serif;font-weight:300;font-size:clamp(1.3rem,1.9vw,1.55rem);letter-spacing:0.015em;line-height:1.3;color:var(--bone)}
+body.jp .news-empty h3{font-family:'Shippori Mincho B1',serif;font-weight:500;letter-spacing:0.005em}
+.news-empty p{font-size:0.93rem;line-height:1.75;color:var(--bone-2);font-weight:300}
+body.jp .news-empty p{line-height:1.9;font-family:'Noto Sans JP',sans-serif}
+
+.news-item{padding:2rem 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr;gap:0.5rem}
+@media(min-width:760px){.news-item{grid-template-columns:140px 1fr;gap:2rem;align-items:baseline}}
+.news-date{font-family:'Switzer',sans-serif;font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--ash);font-weight:500}
+.news-title{font-family:'Switzer',sans-serif;font-weight:300;font-size:1.1rem;letter-spacing:0.015em;line-height:1.4;color:var(--bone)}
+body.jp .news-title{font-family:'Shippori Mincho B1',serif;font-weight:500;letter-spacing:0.005em}
+
+/* ============ CONTACT ============ */
+.cg{display:grid;grid-template-columns:1fr;gap:3rem}
+@media(min-width:860px){.cg{grid-template-columns:1.3fr 1fr;gap:6rem}}
+.cl-l{font-family:'Switzer',sans-serif;font-weight:300;font-size:clamp(1.3rem,2.2vw,1.8rem);line-height:1.42;color:var(--bone);letter-spacing:0.01em}
+body.jp .cl-l{font-family:'Shippori Mincho B1',serif;font-weight:500;letter-spacing:0.005em;line-height:1.65}
+.ce{display:inline-block;margin-top:2.75rem;font-family:'Switzer',sans-serif;font-weight:300;font-size:clamp(1.15rem,1.85vw,1.5rem);color:var(--bone);text-decoration:none;border-bottom:1px solid var(--copper);padding-bottom:6px;transition:all .3s;letter-spacing:0.015em}
+.ce:hover{color:var(--copper-soft);border-bottom-color:var(--copper-soft)}
+.cn{padding-top:1.65rem;border-top:1px solid var(--rule)}
+.cn .lb{font-family:'Switzer',sans-serif;font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--ash);margin-bottom:1.15rem;display:block;font-weight:500}
+.cn .en{font-family:'Switzer',sans-serif;font-weight:300;font-size:1.1rem;color:var(--bone);margin-bottom:0.9rem;letter-spacing:0.02em;line-height:1.3}
+body.jp .cn .en{font-family:'Shippori Mincho B1',serif;font-weight:500;letter-spacing:0.005em}
+.cn address{font-style:normal;color:var(--bone-2);font-size:0.92rem;line-height:1.8;font-weight:300}
+body.jp .cn address{font-family:'Noto Sans JP',sans-serif;line-height:1.9}
+
+/* ============ LEGAL ============ */
+.lb-body{max-width:820px;font-size:0.9rem;line-height:1.85;color:var(--bone-2);font-weight:300}
+body.jp .lb-body{font-family:'Noto Sans JP',sans-serif;line-height:1.95}
+.lb-body p{margin-bottom:1.4rem}
+.lb-body strong{color:var(--bone);font-weight:500}
+.lb-body h4{font-family:'Switzer',sans-serif;font-weight:400;font-size:1rem;letter-spacing:0.015em;color:var(--bone);margin-top:2.35rem;margin-bottom:0.95rem;padding-bottom:0.5rem;border-bottom:1px solid var(--rule)}
+body.jp .lb-body h4{font-family:'Shippori Mincho B1',serif;font-weight:500;letter-spacing:0.005em}
+.lb-body h4:first-child{margin-top:0}
+
+/* ============ FOOTER ============ */
+footer.ft{padding:4.5rem 0 2.25rem;border-top:1px solid var(--rule);background:var(--pine-1);position:relative;z-index:1}
+.ftp{display:grid;grid-template-columns:1fr;gap:2.75rem;padding-bottom:2.75rem;border-bottom:1px solid var(--rule);margin-bottom:2rem}
+@media(min-width:760px){.ftp{grid-template-columns:1.5fr 1fr 1fr;gap:4.5rem}}
+.fbb .syqa{font-size:1.2rem}
+.fbb p{margin-top:1.4rem;color:var(--bone-3);font-size:0.82rem;line-height:1.8;font-weight:300;max-width:320px}
+body.jp .fbb p{font-family:'Noto Sans JP',sans-serif;line-height:1.85}
+.fa-add{font-size:0.8rem;line-height:1.8;color:var(--bone-3);font-weight:300}
+body.jp .fa-add{font-family:'Noto Sans JP',sans-serif}
+.fa-add .lb{display:block;font-size:0.56rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ash);margin-bottom:0.95rem;font-weight:500}
+.fa-add .en{font-family:'Switzer',sans-serif;font-weight:300;color:var(--bone);letter-spacing:0.015em;display:block;margin-bottom:0.55rem;font-size:0.93rem}
+body.jp .fa-add .en{font-family:'Shippori Mincho B1',serif;font-weight:500;letter-spacing:0.005em}
+.fn-f{display:flex;flex-direction:column;gap:0.95rem}
+.fn-f .lb{font-size:0.56rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ash);margin-bottom:0.5rem;font-weight:500}
+.fn-f a{color:var(--bone-2);text-decoration:none;font-family:'Switzer',sans-serif;font-size:0.82rem;transition:color .3s;font-weight:400;letter-spacing:0.01em}
+.fn-f a:hover{color:var(--copper-soft)}
+.fbt{display:grid;grid-template-columns:1fr;gap:1.25rem;align-items:center}
+@media(min-width:760px){.fbt{grid-template-columns:1fr auto;gap:3rem}}
+.fbt p{font-size:0.68rem;line-height:1.75;color:var(--ash);max-width:680px;font-weight:300}
+body.jp .fbt p{font-family:'Noto Sans JP',sans-serif}
+.fbt .cp{font-family:'Switzer',sans-serif;font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--ash);white-space:nowrap;font-weight:500}
+
+/* ============ ANIMATIONS ============ */
+.rv{opacity:0;transform:translateY(24px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv-d1{transition-delay:0.08s}.rv-d2{transition-delay:0.16s}.rv-d3{transition-delay:0.24s}.rv-d4{transition-delay:0.32s}
+.lf{opacity:0;animation:li 1.1s cubic-bezier(.2,.7,.2,1) forwards}
+.lf-1{animation-delay:.1s}.lf-2{animation-delay:.3s}.lf-3{animation-delay:.5s}.lf-4{animation-delay:.7s}
+@keyframes li{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* ============ LANGUAGE TOGGLE ============ */
+.jp-c{display:none}
+body.jp .en-c{display:none}
+body.jp .jp-c{display:block}
+body.jp{font-family:'Noto Sans JP','Switzer',sans-serif}
+
+/* ============ MOBILE ============ */
+@media(max-width:860px){
+ .nav-l{position:fixed;top:0;right:0;height:100vh;width:min(80vw,340px);background:rgba(32,59,54,0.98);backdrop-filter:blur(24px);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:5.5rem 2rem 2rem;gap:1.75rem;transform:translateX(100%);transition:transform .5s cubic-bezier(.2,.7,.2,1);border-left:1px solid var(--rule);overflow-y:auto}
+ .nav-l.open{transform:translateX(0)}
+ .bg{display:block}
+ .lt{margin-right:0.5rem;margin-top:1rem}
+ .nav-l a{font-size:0.88rem}
+}
+
+::selection{background:var(--copper);color:var(--pine)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}}
+
+.pg-wrap{display:none}
+.pg-wrap[style*="block"]{display:block}
+</style>
+
 </head>
 <body>
 
 <nav class="nav" id="nav"><div class="container nav-in">
-<a href="index.html" class="syqa lf lf-1" aria-label="SYQA Capital">
+<a href="#home" data-page-link="home" class="syqa lf lf-1" aria-label="SYQA Capital">
 <span class="syqa-wm">SYQA</span><span class="syqa-dot"></span>
 </a>
 <ul class="nav-l" id="nl">
-<li><a href="firm.html" data-en="Firm" data-jp="会社">Firm</a></li>
-<li><a href="focus.html" data-en="Focus" data-jp="領域">Focus</a></li>
-<li><a href="leadership.html" data-en="Leadership" data-jp="代表">Leadership</a></li>
-<li><a href="news.html" data-en="News" data-jp="ニュース">News</a></li>
-<li><a href="contact.html" data-en="Contact" data-jp="連絡">Contact</a></li>
+<li><a href="#firm" data-page-link="firm" data-en="Firm" data-jp="会社">Firm</a></li>
+<li><a href="#focus" data-page-link="focus" data-en="Focus" data-jp="領域">Focus</a></li>
+<li><a href="#leadership" data-page-link="leadership" data-en="Leadership" data-jp="代表">Leadership</a></li>
+<li><a href="#news" data-page-link="news" data-en="News" data-jp="ニュース">News</a></li>
+<li><a href="#contact" data-page-link="contact" data-en="Contact" data-jp="連絡">Contact</a></li>
 <li><div class="lt"><button type="button" class="active" id="bEN">EN</button><button type="button" id="bJP">JP</button></div></li>
 </ul>
 <button class="bg" id="bg" aria-label="Menu">
@@ -72,44 +390,41 @@
 </button>
 </div></nav>
 
-<main id="top">
-
-<section class="hero"><div class="container">
+<div class="pg-wrap" data-page="home"><section class="hero"><div class="container">
 <div class="hero-inner">
 <div>
-<div class="hero-eyebrow lf lf-1"><span class="en-c">Asia-Focused Investment Firm</span><span class="jp-c">アジア注力・投資会社</span></div>
-<h1 class="hero-title lf lf-2"><span class="en-c">An Asia-focused investment firm.<br>Japan at the core.</span><span class="jp-c">アジアに注力する投資会社。<br>その中核に、日本を。</span></h1>
+<div class="hero-eyebrow lf lf-1"><span class="en-c">Tokyo</span><span class="jp-c">東京</span></div>
+<h1 class="hero-title lf lf-2"><span class="en-c">An Asia-focused investment firm.<br>Japan at the core.</span><span class="jp-c">アジアを軸とする投資会社。<br>中核に、日本を。</span></h1>
 </div>
 <div class="hero-meta lf lf-3">
 <div class="hero-sub">
-<div class="en-c">SYQA Capital invests across Asia, with Japan as our home and primary market. Led from Tokyo with coverage extended through Seoul, the firm was established in 2021 on nearly a decade of groundwork in the Japanese market — the relationships, local teams, and execution capability that make disciplined sourcing possible.</div>
-<div class="jp-c">SYQA Capitalは、アジア全域で投資を行い、日本を拠点および主要市場としています。東京を本拠地とし、ソウルを通じて北アジアをカバーする当社は、2021年に設立され、日本市場における約10年にわたる地道な活動 — 規律ある案件発掘を可能にする、現地との関係性、実行チーム、執行能力 — の上に築かれています。</div>
+<div class="en-c">SYQA Capital invests across Asia, with Japan as our home and primary market. Led from Tokyo, with coverage extended through Seoul. Founded in 2021 on nearly a decade of prior groundwork.</div>
+<div class="jp-c">SYQA Capitalは、アジア全域で投資を行い、日本を拠点および主要市場としています。東京を本拠に、ソウルを通じて北アジアをカバーします。2021年設立、それ以前の約10年にわたる地道な活動の上に築かれています。</div>
 </div>
-<div class="hero-locus">
-<span class="label"><span class="en-c">Based in</span><span class="jp-c">拠点</span></span>
-<span class="value">Tokyo · Marunouchi</span>
-</div>
+
 </div>
 <div class="hero-foot lf lf-4">
 <span>SYQA Capital Co., Ltd.</span>
-<span>Est. 2021</span>
+<span>Tokyo · Marunouchi</span>
 </div>
 </div>
 </div></section>
 
 <!-- QUOTE BAND -->
+
 <div class="band"><div class="container">
 <div class="band-quote rv">
 <span class="en-c">"We favour depth of relationship over breadth of activity, and work that compounds over time."</span>
 <span class="jp-c">「関係の広さよりも深さを、そして時間とともに積み重なる仕事を大切にします。」</span>
 </div>
 <div class="band-attribution rv rv-d1">
-<span class="en-c">SYQA Capital · Approach</span>
-<span class="jp-c">SYQA Capital · 姿勢</span>
+<span class="en-c">SYQA Capital</span>
+<span class="jp-c">SYQA Capital</span>
 </div>
 </div></div>
 
 <!-- EXPLORE: Cross-link cards to inner pages -->
+
 <section class="mod"><div class="container">
 <div class="mh rv">
 <span class="ml"><span class="en-c">Explore</span><span class="jp-c">各ページ</span></span>
@@ -122,21 +437,21 @@
 
 <div class="xlink-grid">
 
-<a href="firm.html" class="xlink rv rv-d1">
+<a href="#firm" data-page-link="firm" class="xlink rv rv-d1">
 <div class="xlink-label"><span class="en-c">Firm</span><span class="jp-c">会社</span></div>
 <h3><span class="en-c">Who we are</span><span class="jp-c">我々について</span></h3>
 <p><span class="en-c">Corporate overview, story, and the deliberate choice of Tokyo as home.</span><span class="jp-c">会社概要、沿革、そして東京を拠点とする意図的な選択について。</span></p>
 <span class="xlink-arrow"><span class="en-c">Read more →</span><span class="jp-c">詳しく見る →</span></span>
 </a>
 
-<a href="focus.html" class="xlink rv rv-d2">
+<a href="#focus" data-page-link="focus" class="xlink rv rv-d2">
 <div class="xlink-label"><span class="en-c">Focus</span><span class="jp-c">領域</span></div>
 <h3><span class="en-c">How we invest</span><span class="jp-c">投資領域</span></h3>
-<p><span class="en-c">Three interconnected areas across Asia: commercial real estate, hospitality, and real asset equity.</span><span class="jp-c">アジア全域における三つの相互に関連する領域：商業不動産、ホスピタリティ、実物資産エクイティ。</span></p>
+<p><span class="en-c">Five interconnected areas across Asia: commercial real estate, hospitality, real asset equity, digital infrastructure, and renewable energy assets.</span><span class="jp-c">アジア全域における五つの領域：商業不動産、ホスピタリティ、実物資産エクイティ、デジタルインフラ、再生可能エネルギー資産。</span></p>
 <span class="xlink-arrow"><span class="en-c">Read more →</span><span class="jp-c">詳しく見る →</span></span>
 </a>
 
-<a href="leadership.html" class="xlink rv rv-d3">
+<a href="#leadership" data-page-link="leadership" class="xlink rv rv-d3">
 <div class="xlink-label"><span class="en-c">Leadership</span><span class="jp-c">代表</span></div>
 <h3><span class="en-c">Who leads the firm</span><span class="jp-c">経営者</span></h3>
 <p><span class="en-c">Founding principles. Tokyo base. Expansion in line with the work.</span><span class="jp-c">創業理念。東京を拠点に。取り組む仕事に沿った拡充。</span></p>
@@ -147,10 +462,11 @@
 </div></section>
 
 <!-- PRINCIPLES (brief on home) -->
+
 <section class="mod alt"><div class="container">
 <div class="mh rv">
 <span class="ml"><span class="en-c">Principles</span><span class="jp-c">理念</span></span>
-<h2 class="mt"><span class="en-c">Rigour and restraint,<br>in equal measure.</span><span class="jp-c">厳格さと節度。<br>その等しい均衡。</span></h2>
+<h2 class="mt"><span class="en-c">Four principles,<br>applied consistently.</span><span class="jp-c">四つの理念。<br>一貫した適用。</span></h2>
 </div>
 <div class="mle rv rv-d1">
 <div class="en-c">Good work begins with structure, not speculation. We build carefully, communicate clearly, and let the work speak for itself.</div>
@@ -178,14 +494,595 @@
 <div class="jp-c"><p>日本市場における、約10年にわたる直接的な存在。執行を支える関係性とネットワークは、資本だけでは築けません。</p></div>
 </div>
 </div>
+</div></section></div>
+<div class="pg-wrap" data-page="firm"><section class="pg-head"><div class="container">
+<div class="pg-head-eyebrow lf lf-1"><span class="en-c">Firm</span><span class="jp-c">会社</span></div>
+<h1 class="lf lf-2"><span class="en-c">An Asia investment firm,<br>founded in Tokyo.</span><span class="jp-c">東京で設立された、<br>アジアの投資会社。</span></h1>
+<div class="pg-head-sub lf lf-3">
+<div class="en-c">SYQA Capital Co., Ltd. is an Asia-focused investment firm, with Japan as our home and primary market. Established in June 2021 and headquartered in Marunouchi, Tokyo, with coverage extended through Seoul, we work across five interconnected areas — commercial real estate, hospitality, real asset equity, digital infrastructure, and renewable energy assets.</div>
+<div class="jp-c">SYQA Capital株式会社は、アジアを軸とする投資会社です。日本を拠点および主要市場として2021年6月に設立、丸の内に本社を置いています。ソウルを通じて北アジアをカバーし、商業不動産、ホスピタリティ、実物資産エクイティ、デジタルインフラ、再生可能エネルギー資産の五つの領域で活動しています。</div>
+</div>
 </div></section>
 
-</main>
+<section class="mod"><div class="container">
+<div class="mh rv"><span class="ml"><span class="num">01 /</span><span class="en-c">Story</span><span class="jp-c">沿革</span></span>
+<h2 class="mt"><span class="en-c">A deliberate choice of<br>home and scope.</span><span class="jp-c">拠点と範囲における、<br>意図的な選択。</span></h2></div>
+
+<div class="firm-grid">
+<div class="prose rv rv-d1">
+<div class="en-c">
+<p>SYQA Capital was established in <strong>June 2021</strong> in Tokyo. The choice of home was deliberate. Japan's capital markets, engineering culture, and long-cycle thinking shape how we work — and form the foundation from which we operate across Asia.</p>
+<p>We are <strong>Asia-focused with Japan at the core</strong>. Japan is our home, our primary market, and the anchor of our deal flow. Tokyo is the operating seat; Seoul extends our coverage into North Asia and the Japan–Korea corridor. From this base, we engage across the broader Asian region — selectively, and only where our capabilities translate.</p>
+<p>Our approach favours <strong>depth over breadth</strong>, careful selection over broad activity, and relationships that compound over time. We build patiently. We operate transparently. We hold a long view.</p>
+<p>The firm is deliberately narrow in scope, deep in capability, and <strong>unhurried in its growth</strong>.</p>
+</div>
+<div class="jp-c">
+<p>SYQA Capitalは、<strong>2021年6月</strong>に東京で設立されました。拠点の選択は意図的なものです。日本の資本市場、工学文化、長期的思考が、我々の仕事のあり方を形づくり、アジア全域での活動の基盤となっています。</p>
+<p>我々は<strong>アジアを軸とし、日本を中核</strong>に据えます。日本は我々の拠点であり、主要市場であり、案件発掘の起点です。東京を運営拠点とし、ソウルを通じて北アジアおよび日韓回廊をカバーします。この拠点から、より広いアジア地域で — 選択的に、そして我々の能力が活きる領域においてのみ — 関与します。</p>
+<p>我々のアプローチは、<strong>広さよりも深さ</strong>、広範な活動よりも慎重な選択、そして時間とともに価値を積み重ねる関係性を重視します。忍耐強く築き、透明性をもって運営し、長期的な視座を持ちます。</p>
+<p>会社は意図的に、対象を絞り込み、深い能力を持ち、<strong>急がぬ成長</strong>を旨とする設計としています。</p>
+</div>
+</div>
+<div class="firm-side rv rv-d2">
+<div class="firm-side-label"><span class="en-c">Corporate Overview</span><span class="jp-c">会社概要</span></div>
+<dl>
+<div><dt><span class="en-c">Company</span><span class="jp-c">社名</span></dt><dd>SYQA Capital Co., Ltd.</dd></div>
+<div><dt><span class="en-c">Established</span><span class="jp-c">設立</span></dt><dd>June 2021</dd></div>
+<div><dt><span class="en-c">Representative Director</span><span class="jp-c">代表取締役</span></dt><dd><span class="en-c">Muhammad Subhan Sarwar</span><span class="jp-c">ムハンマド・サブハン・サルワール</span></dd></div>
+<div><dt><span class="en-c">Head Office</span><span class="jp-c">本社</span></dt><dd><span class="en-c">Marunouchi Nijubashi Building 2F<br>3-2-2 Marunouchi, Chiyoda-ku<br>Tokyo 100-0005, Japan</span><span class="jp-c">〒100-0005<br>東京都千代田区丸の内3丁目2番2号<br>丸の内二重橋ビル2階</span></dd></div>
+<div><dt><span class="en-c">Coverage</span><span class="jp-c">カバレッジ</span></dt><dd><span class="en-c">Tokyo · Seoul</span><span class="jp-c">東京 · ソウル</span></dd></div>
+<div><dt><span class="en-c">Scope</span><span class="jp-c">範囲</span></dt><dd><span class="en-c">Asia-focused · Japan at the core</span><span class="jp-c">アジア注力 · 日本中核</span></dd></div>
+<div><dt><span class="en-c">Focus Areas</span><span class="jp-c">事業領域</span></dt><dd><span class="en-c">Commercial RE · Hospitality · Real Asset Equity · Digital Infrastructure · Renewable Energy</span><span class="jp-c">商業不動産 · ホスピタリティ · 実物資産エクイティ · デジタルインフラ · 再生可能エネルギー</span></dd></div>
+</dl>
+</div>
+</div>
+</div></section>
+
+<section class="mod alt"><div class="container">
+<div class="mh rv"><span class="ml"><span class="num">02 /</span><span class="en-c">Foundation</span><span class="jp-c">基盤</span></span>
+<h2 class="mt"><span class="en-c">Nearly a decade of<br>groundwork in Japan.</span><span class="jp-c">日本における、<br>約10年の地道な活動。</span></h2></div>
+<div class="prose rv rv-d1">
+<div class="en-c">
+<p>SYQA Capital was incorporated in June 2021. The firm, however, rests on foundations built well before.</p>
+<p>Nearly a decade of direct presence in the Japanese market: relationships cultivated with operators, developers, counterparties, and local execution teams. The kind of access that institutional capital alone cannot purchase, and that remote allocators cannot replicate from a distance.</p>
+<p>This groundwork is <strong>not a marketing claim</strong>. It is the practical reason SYQA can source, structure, and execute opportunities in Japan that are not realistically available through conventional channels. The firm's approach — selective, patient, and disciplined — is possible because the access underneath it already exists.</p>
+<p>The vehicle is new. The ecosystem is not.</p>
+</div>
+<div class="jp-c">
+<p>SYQA Capitalは、2021年6月に設立されました。しかし、会社の基盤は、それ以前から長い時間をかけて築かれています。</p>
+<p>日本市場における、約10年にわたる直接的な存在 — 事業者、開発者、カウンターパーティ、そして現地の実行チームとの間で培われた関係性です。それは、資本だけでは購入できず、遠隔の投資家が距離を隔てて再現することができない種類のアクセスです。</p>
+<p>この基盤は<strong>マーケティング上の主張ではありません</strong>。従来のチャネルでは現実的に得られない機会を、日本において発掘し、構造化し、執行することを可能にする、実践的な理由です。会社の姿勢 — 選択的で、忍耐強く、規律ある — は、その下にあるアクセスが既に存在するからこそ成立しています。</p>
+<p>ビークルは新しい。エコシステムは、そうではありません。</p>
+</div>
+</div>
+</div></section>
+
+<section class="mod"><div class="container">
+<div class="mh rv"><span class="ml"><span class="num">03 /</span><span class="en-c">Principles</span><span class="jp-c">理念</span></span>
+<h2 class="mt"><span class="en-c">Four principles,<br>applied consistently.</span><span class="jp-c">四つの理念。<br>一貫した適用。</span></h2></div>
+<div class="mle rv rv-d1">
+<div class="en-c">Good work begins with structure, not speculation. We build carefully, communicate clearly, and let the work speak for itself. These principles guide every decision we take.</div>
+<div class="jp-c">良い仕事は、投機ではなく構造から始まります。我々は慎重に築き、明確に伝え、仕事そのものに語らせます。これらの理念が、我々のすべての判断を導きます。</div>
+</div>
+<div class="pl">
+<div class="plr rv rv-d1"><span class="pln">i / Rigour</span>
+<h3><span class="en-c">Rigour<span class="sub">Considered in every decision</span></span><span class="jp-c">厳格さ<span class="sub">Rigour</span></span></h3>
+<div class="en-c"><p>Every choice is considered, documented, and revisited. Process is our protection. Discipline is measured as much in what does not happen as in what does.</p></div>
+<div class="jp-c"><p>すべての選択は、熟慮され、記録され、繰り返し見直されます。プロセスこそが我々の護りです。規律とは、行動したことと同様に、行動しなかったことによっても測られます。</p></div>
+</div>
+<div class="plr rv rv-d2"><span class="pln">ii / Discretion</span>
+<h3><span class="en-c">Discretion<span class="sub">Results speak louder than presence</span></span><span class="jp-c">節度<span class="sub">Discretion</span></span></h3>
+<div class="en-c"><p>Our communication is direct. Our presence is deliberately understated. The outcome is the statement — not the story around it.</p></div>
+<div class="jp-c"><p>対話は直接的に、存在は意図的に控えめに。語るべきは成果そのものであり、その周囲の物語ではありません。</p></div>
+</div>
+<div class="plr rv rv-d3"><span class="pln">iii / Patience</span>
+<h3><span class="en-c">Patience<span class="sub">Long cycles, careful steps</span></span><span class="jp-c">忍耐<span class="sub">Patience</span></span></h3>
+<div class="en-c"><p>Value compounds over long horizons. We move carefully, favouring durable outcomes over quick ones. Patience is not passivity — it is the discipline to wait for the right work.</p></div>
+<div class="jp-c"><p>価値は長い時間をかけて積み重なります。我々は慎重に動き、速さよりも持続性を重視します。忍耐とは受動ではなく、正しい仕事を待つための規律です。</p></div>
+</div>
+<div class="plr rv rv-d4"><span class="pln">iv / Proximity</span>
+<h3><span class="en-c">Proximity<span class="sub">Close to the work, not above it</span></span><span class="jp-c">近接性<span class="sub">Proximity</span></span></h3>
+<div class="en-c"><p>Nearly a decade of direct presence in the Japanese market. The relationships, local execution teams, and on-the-ground intelligence that underpin our work cannot be wired in. Proximity is not a line in a pitch — it is the foundation beneath the firm.</p></div>
+<div class="jp-c"><p>日本市場における、約10年にわたる直接的な存在。我々の仕事を支える関係性、現地の実行チーム、現場の知見は、資本だけでは築けません。近接性は、資料上の一行ではなく、会社の根底にある基盤です。</p></div>
+</div>
+</div>
+</div></section>
+
+<!-- Cross-links to other sections -->
+
+<section class="mod"><div class="container">
+<div class="mh rv">
+<span class="ml"><span class="en-c">Continue</span><span class="jp-c">続きを読む</span></span>
+<h2 class="mt"><span class="en-c">More of the firm.</span><span class="jp-c">会社について、さらに。</span></h2>
+</div>
+<div class="xlink-grid">
+<a href="#focus" data-page-link="focus" class="xlink rv rv-d1">
+<div class="xlink-label"><span class="en-c">Focus</span><span class="jp-c">領域</span></div>
+<h3><span class="en-c">How we invest</span><span class="jp-c">投資領域</span></h3>
+<p><span class="en-c">Five areas across Asia, one standard of work.</span><span class="jp-c">アジアにおける五つの領域、一つの基準。</span></p>
+<span class="xlink-arrow"><span class="en-c">Read more →</span><span class="jp-c">詳しく見る →</span></span>
+</a>
+<a href="#leadership" data-page-link="leadership" class="xlink rv rv-d2">
+<div class="xlink-label"><span class="en-c">Leadership</span><span class="jp-c">代表</span></div>
+<h3><span class="en-c">Who leads the firm</span><span class="jp-c">経営者</span></h3>
+<p><span class="en-c">Founding principles. Tokyo base.</span><span class="jp-c">創業理念。東京を拠点に。</span></p>
+<span class="xlink-arrow"><span class="en-c">Read more →</span><span class="jp-c">詳しく見る →</span></span>
+</a>
+<a href="#contact" data-page-link="contact" class="xlink rv rv-d3">
+<div class="xlink-label"><span class="en-c">Contact</span><span class="jp-c">連絡</span></div>
+<h3><span class="en-c">Get in touch</span><span class="jp-c">お問い合わせ</span></h3>
+<p><span class="en-c">Direct, considered conversation.</span><span class="jp-c">直接的で、熟慮された対話を。</span></p>
+<span class="xlink-arrow"><span class="en-c">Read more →</span><span class="jp-c">詳しく見る →</span></span>
+</a>
+</div>
+</div></section></div>
+<div class="pg-wrap" data-page="focus"><section class="pg-head"><div class="container">
+<div class="pg-head-eyebrow lf lf-1"><span class="en-c">Focus</span><span class="jp-c">領域</span></div>
+<h1 class="lf lf-2"><span class="en-c">Five areas.<br>One standard of work.</span><span class="jp-c">五つの領域。<br>一つの基準。</span></h1>
+<div class="pg-head-sub lf lf-3">
+<div class="en-c">SYQA Capital concentrates its work across five interconnected areas — commercial real estate, hospitality, real asset equity, digital infrastructure, and renewable energy assets. Each is approached with the same underwriting standard: careful selection, patient development, transparent operation. Japan is our core; Asia defines our scope.</div>
+<div class="jp-c">SYQA Capitalは、商業不動産、ホスピタリティ、実物資産エクイティ、デジタルインフラ、再生可能エネルギー資産の五つの領域に取り組んでいます。各領域に同じ審査基準を適用します — 慎重な選択、忍耐強い育成、透明な運営。日本を中核に据え、アジアを活動領域とします。</div>
+</div>
+</div></section>
+
+<section class="mod"><div class="container">
+
+<div class="focus-block">
+<div class="focus-block-grid">
+<div class="focus-block-label rv"><span class="num">01 /</span><span class="en-c">Commercial Real Estate</span><span class="jp-c">商業不動産</span></div>
+<div class="rv rv-d1">
+<h3><span class="en-c">Opportunistic, repositioning, corporate disposition.</span><span class="jp-c">オポチュニスティック、リポジショニング、法人放出。</span></h3>
+<div class="en-c">
+<p>Japan is one of the few developed real-assets markets where positive carry remains available. Japanese corporate and institutional balance sheets are releasing real estate at scale, driven by governance reform, portfolio rationalisation, and generational transition.</p>
+<p>We favour <strong>enduring fundamentals</strong> — locations with lasting demand, buildings with sound architectural and operational bones, and markets where patient capital finds natural advantage. Our approach is operational, not financial: we look for assets comfortable to hold through cycles, and pass on opportunities that rely on short-term tailwinds to work.</p>
+<p>Expressed through office-to-residential repositioning, corporate disposition, retail redevelopment, and value-add mixed-use.</p>
+</div>
+<div class="jp-c">
+<p>日本は、プラスのキャリーが引き続き得られる、数少ない先進国の実物資産市場の一つです。ガバナンス改革、ポートフォリオ再編、世代交代によって、日本の事業法人および機関投資家のバランスシートから大規模に不動産が放出されています。</p>
+<p>我々が重視するのは、<strong>持続的なファンダメンタルズ</strong>を持つ立地です — 長く続く需要、建築的・運営的に健全な建物、そして忍耐強い資本が自然な優位性を見出す市場。我々のアプローチは運営的であり、金融的ではありません。サイクルを通じて保有することに安心できる資産を探し、短期的な追い風に依存する機会は見送ります。</p>
+<p>オフィスから住宅への転換、法人放出、小売再開発、バリューアッド型複合用途を通じて表現されます。</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="focus-block">
+<div class="focus-block-grid">
+<div class="focus-block-label rv"><span class="num">02 /</span><span class="en-c">Hospitality</span><span class="jp-c">ホスピタリティ</span></div>
+<div class="rv rv-d1">
+<h3><span class="en-c">Selective, operator-led, entry-disciplined.</span><span class="jp-c">選択的、オペレーター主導、エントリー規律。</span></h3>
+<div class="en-c">
+<p>Japanese hospitality has matured as a thesis. We treat hospitality as a secondary, deeply selective allocation — deployed where pricing, operator alignment, and asset-specific repositioning logic continue to support institutional underwriting.</p>
+<p>Not a macro tourism trade. A disciplined allocation where asset, operator, and location meet the standard. Acquisition paired with repositioning and an aligned operator. Mid-market and lifestyle positions in gateway Japanese markets.</p>
+</div>
+<div class="jp-c">
+<p>日本のホスピタリティはテーマとして成熟しました。我々はホスピタリティを二次的な、深く選択的な配分として扱います — 価格、オペレーターとの整合性、資産固有のリポジショニング論理が、機関投資家水準の審査を引き続き支える領域に限って展開します。</p>
+<p>マクロ観光トレードではありません。資産、オペレーター、立地が基準を満たす、規律ある配分です。取得はリポジショニングと整合的なオペレーターと組み合わされます。日本のゲートウェイ市場におけるミッドマーケットおよびライフスタイル・ポジション。</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="focus-block">
+<div class="focus-block-grid">
+<div class="focus-block-label rv"><span class="num">03 /</span><span class="en-c">Real Asset Equity</span><span class="jp-c">実物資産エクイティ</span></div>
+<div class="rv rv-d1">
+<h3><span class="en-c">Equity in real-asset-backed businesses.</span><span class="jp-c">実物資産に裏付けられた事業におけるエクイティ。</span></h3>
+<div class="en-c">
+<p>Equity positions in Japanese companies whose cashflows derive from real-asset-adjacent operations: hospitality platforms, logistics operators, real-estate holding companies with institutional portfolios.</p>
+<p>The expression is narrow by design. Exposure is restricted to situations where underlying economics behave like real assets — contracted cashflows, identifiable asset backing, proprietary origination. Access is routed through SYQA's cross-border relationships, not commoditised channels.</p>
+<p>Situations are frequently shaped by Japanese governance reform, generational transition, or activist pressure, where real assets are surfaced through equity windows. Not a venture sleeve.</p>
+</div>
+<div class="jp-c">
+<p>キャッシュフローが実物資産隣接の事業から生じる日本企業へのエクイティ・ポジション — ホスピタリティ・プラットフォーム、物流事業者、機関投資家向けポートフォリオを有する不動産保有会社。</p>
+<p>表現は意図的に狭く設計されています。エクスポージャーは、基礎的経済が実物資産のように機能する状況に限定されます — 契約されたキャッシュフロー、特定可能な資産による裏付け、独自の案件発掘。アクセスは、コモディティ化されたチャネルではなく、SYQAの国境を越えた関係性を通じて行われます。</p>
+<p>こうした状況は、日本のガバナンス改革、世代交代、またはアクティビスト圧力によって形成されることが多く、実物資産がエクイティという窓口を通じて表面化するものです。ベンチャー領域ではありません。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="focus-block">
+<div class="focus-block-grid">
+<div class="focus-block-label rv"><span class="num">04 /</span><span class="en-c">Digital Infrastructure</span><span class="jp-c">デジタルインフラ</span></div>
+<div class="rv rv-d1">
+<h3><span class="en-c">Long-duration assets in Japan&#39;s compute and connectivity backbone.</span><span class="jp-c">日本の計算・通信基盤を支える、長期資産。</span></h3>
+<div class="en-c">
+<p>Data centres, fibre, and adjacent operating-asset platforms supporting the structural increase in compute demand across Japan and gateway Asian markets. The investment case rests on long-duration contracts with creditworthy counterparties, secured land and grid access, and operating partners with delivery history.</p>
+<p>We approach digital infrastructure as a <strong>real-asset class</strong> — anchored by physical sites, contracted cash flows, and operational discipline — not as technology venture. Construction, permitting, and grid risk are managed up front; exposure is sized to where these can be priced honestly.</p>
+<p>Single-site equity, platform-level participations, and selectively, anchor positions in sponsor-led vehicles with aligned operators.</p>
+</div>
+<div class="jp-c">
+<p>日本およびアジアの主要市場における、計算需要の構造的な増加を支えるデータセンター、光ファイバー、および関連する稼働資産プラットフォーム。投資判断は、信用力のあるカウンターパーティとの長期契約、土地と電力系統の確保、ならびに実績のある運営パートナーに支えられます。</p>
+<p>デジタルインフラを、テクノロジー・ベンチャーではなく<strong>実物資産</strong>として捉えます — 物理的拠点、契約に基づくキャッシュフロー、運営規律に裏付けられた領域です。建設、許認可、電力系統に関わるリスクは事前に管理し、これらを誠実に評価できる範囲においてエクスポージャーを取ります。</p>
+<p>単一資産へのエクイティ、プラットフォーム単位での参加、および選択的に、整合的な運営者を擁するスポンサー主導ビークルにおけるアンカー・ポジション。</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="focus-block">
+<div class="focus-block-grid">
+<div class="focus-block-label rv"><span class="num">05 /</span><span class="en-c">Renewable Energy Assets</span><span class="jp-c">再生可能エネルギー資産</span></div>
+<div class="rv rv-d1">
+<h3><span class="en-c">Operating renewables, contracted cash flows.</span><span class="jp-c">稼働中の再生可能エネルギー、契約に基づくキャッシュフロー。</span></h3>
+<div class="en-c">
+<p>Operating-stage solar, wind, and adjacent renewable energy assets in Japan and selectively across Asia. We seek established generation history, long-duration offtake or feed-in arrangements with reliable counterparties, and clear pathways to refinancing or repowering.</p>
+<p>Pre-development greenfield risk is avoided. Permitting status, grid interconnection, and operational complexity are treated as the primary underwriting questions, <strong>not the marketing story</strong>.</p>
+<p>Direct equity in operating assets, secondary acquisitions of operating portfolios, and selectively, repowering and re-contracting situations where the upside is operational rather than speculative.</p>
+</div>
+<div class="jp-c">
+<p>日本および選択的にアジアにおける、稼働段階の太陽光、風力、および関連する再生可能エネルギー資産。確立された発電実績、信頼できるカウンターパーティとの長期オフテイクまたは固定価格契約、ならびに借換えやリパワリングの明確な道筋を有する資産を選好します。</p>
+<p>開発前段階のグリーンフィールド・リスクは回避します。許認可の状況、電力系統への接続、運営の複雑性を — <strong>マーケティング上の物語ではなく</strong> — 審査の主要な論点として扱います。</p>
+<p>稼働中資産への直接エクイティ、稼働中ポートフォリオの二次取得、および選択的に、優位性が投機的ではなく運営的である領域でのリパワリングと再契約の機会。</p>
+</div>
+</div>
+</div>
+</div>
+
+</div></section>
+
+<div class="band"><div class="container">
+<div class="band-quote rv">
+<span class="en-c">"We favour depth of relationship over breadth of activity, and work that compounds over time."</span>
+<span class="jp-c">「関係の広さよりも深さを、そして時間とともに積み重なる仕事を大切にします。」</span>
+</div>
+<div class="band-attribution rv rv-d1">
+<span class="en-c">SYQA Capital</span>
+<span class="jp-c">SYQA Capital</span>
+</div>
+</div></div>
+
+<section class="mod"><div class="container">
+<div class="mh rv">
+<span class="ml"><span class="en-c">Continue</span><span class="jp-c">続きを読む</span></span>
+<h2 class="mt"><span class="en-c">More of the firm.</span><span class="jp-c">会社について、さらに。</span></h2>
+</div>
+<div class="xlink-grid">
+<a href="#firm" data-page-link="firm" class="xlink rv rv-d1">
+<div class="xlink-label"><span class="en-c">Firm</span><span class="jp-c">会社</span></div>
+<h3><span class="en-c">Who we are</span><span class="jp-c">我々について</span></h3>
+<p><span class="en-c">Corporate overview and foundation.</span><span class="jp-c">会社概要と基盤。</span></p>
+<span class="xlink-arrow"><span class="en-c">Read more →</span><span class="jp-c">詳しく見る →</span></span>
+</a>
+<a href="#leadership" data-page-link="leadership" class="xlink rv rv-d2">
+<div class="xlink-label"><span class="en-c">Leadership</span><span class="jp-c">代表</span></div>
+<h3><span class="en-c">Senior bench</span><span class="jp-c">シニア陣容</span></h3>
+<p><span class="en-c">Tokyo and Seoul. Institutional weight.</span><span class="jp-c">東京とソウル。機関投資家水準。</span></p>
+<span class="xlink-arrow"><span class="en-c">Read more →</span><span class="jp-c">詳しく見る →</span></span>
+</a>
+<a href="#contact" data-page-link="contact" class="xlink rv rv-d3">
+<div class="xlink-label"><span class="en-c">Contact</span><span class="jp-c">連絡</span></div>
+<h3><span class="en-c">Get in touch</span><span class="jp-c">お問い合わせ</span></h3>
+<p><span class="en-c">Direct, considered conversation.</span><span class="jp-c">直接的で、熟慮された対話を。</span></p>
+<span class="xlink-arrow"><span class="en-c">Read more →</span><span class="jp-c">詳しく見る →</span></span>
+</a>
+</div>
+</div></section></div>
+<div class="pg-wrap" data-page="leadership"><section class="pg-head"><div class="container">
+<div class="pg-head-eyebrow lf lf-1"><span class="en-c">Leadership</span><span class="jp-c">代表</span></div>
+<h1 class="lf lf-2"><span class="en-c">Senior bench.<br>Institutional weight.</span><span class="jp-c">シニア陣容。<br>機関投資家水準。</span></h1>
+<div class="pg-head-sub lf lf-3">
+<div class="en-c">SYQA Capital is led from Tokyo, with coverage extended through Seoul. The bench combines platform architecture, decades of Japanese capital markets experience, on-the-ground real estate execution, and cross-border judgment.</div>
+<div class="jp-c">SYQA Capitalは東京を拠点に率いられ、ソウルを通じて北アジアをカバーしています。プラットフォーム設計、日本の資本市場における数十年の経験、現地における不動産執行力、そして国境を越えた判断力を併せ持つシニア陣容で構成されています。</div>
+</div>
+</div></section>
+
+<section class="mod"><div class="container">
+
+<div class="mh rv">
+<span class="ml"><span class="num">01 /</span><span class="en-c">Tokyo Bench</span><span class="jp-c">東京チーム</span></span>
+<h2 class="mt"><span class="en-c">Tokyo bench.</span><span class="jp-c">東京チーム。</span></h2>
+</div>
+<div class="mle rv rv-d1">
+<div class="en-c">Platform architecture, capital markets weight, and cross-border judgment — combined with on-the-ground real estate sourcing and execution discipline.</div>
+<div class="jp-c">プラットフォーム設計、資本市場の重み、国境を越えた判断力 — 現地における不動産の発掘および執行規律と組み合わされています。</div>
+</div>
+
+<!--
+  ===========================================================
+  LEADERSHIP CARDS — Photo handling:
+  ===========================================================
+  Each card uses a .lc-avatar div with data-initials attribute
+  showing the person's initials as a fallback.
+
+  To add a photo later:
+  1. Drop the image file into an /images/ folder alongside
+     index.html (same level as styles.css)
+  2. Uncomment the <img> tag inside the matching .lc-avatar div
+  3. Update the src path (e.g. src="images/subhan.jpg")
+  4. The initials will be hidden automatically when img loads
+  ===========================================================
+-->
+
+<div class="lg-v rv rv-d1">
+
+<div class="lc lc-full">
+<div class="lc-avatar" data-initials="MS">
+<img src="images/subhan.jpg" alt="Muhammad Subhan Sarwar" loading="lazy">
+</div>
+<div class="lc-body">
+<div class="ro"><span class="en-c">Founder · Representative Director</span><span class="jp-c">創業者 · 代表取締役</span></div>
+<h3><span class="en-c">Muhammad Subhan Sarwar</span><span class="jp-c">ムハンマド・サブハン・サルワール</span></h3>
+<div class="tsub"><span class="en-c">Tokyo · Dubai</span><span class="jp-c">東京 · ドバイ</span></div>
+<div class="en-c"><p>Founder of SYQA Capital. Representative Director of the Tokyo operating entity. Responsible for platform architecture, capital formation, investor relationships, and cross-border structuring across the Gulf–Japan corridor.</p></div>
+<div class="jp-c"><p>SYQA Capital創業者。東京の事業会社の代表取締役。プラットフォーム設計、資本形成、投資家関係、そして湾岸–日本回廊における国境を越えた構造化を担う。</p></div>
+</div>
+</div>
+
+<div class="lc lc-full">
+<div class="lc-avatar" data-initials="MM">
+<img src="images/murata.jpg" alt="Masaki Murata" loading="lazy">
+</div>
+<div class="lc-body">
+<div class="ro"><span class="en-c">Senior Advisor · Capital Markets</span><span class="jp-c">シニアアドバイザー · 資本市場</span></div>
+<h3><span class="en-c">Masaki Murata</span><span class="jp-c">村田 正樹</span></h3>
+<div class="tsub"><span class="en-c">Tokyo · Japan</span><span class="jp-c">東京 · 日本</span></div>
+<div class="en-c"><p>Over forty years in Japanese capital markets and institutional real estate. Former senior executive at Nomura. Former Chief Executive Officer of Mori Trust Asset Management. Contributes deep institutional relationship weight across Japanese corporate, banking, and sovereign-adjacent counterparties.</p></div>
+<div class="jp-c"><p>日本の資本市場および機関投資家向け不動産において40年以上の経験。野村證券元シニアエグゼクティブ。森トラスト・アセットマネジメント元最高経営責任者。日本の事業法人、銀行、ソブリン関連のカウンターパーティにおいて、深い機関投資家としての関係性を有する。</p></div>
+</div>
+</div>
+
+<div class="lc lc-full">
+<div class="lc-avatar" data-initials="CC">
+<img src="images/chen.jpg" alt="Chen Lung Cher" loading="lazy">
+</div>
+<div class="lc-body">
+<div class="ro"><span class="en-c">Senior Advisor · Japan &amp; Asia Structuring</span><span class="jp-c">シニアアドバイザー · 日本・アジア構造化</span></div>
+<h3><span class="en-c">Chen Lung Cher</span><span class="jp-c">チェン・ランチャー</span></h3>
+<div class="tsub"><span class="en-c">Tokyo · Singapore</span><span class="jp-c">東京 · シンガポール</span></div>
+<div class="en-c"><p>Senior adviser with deep cross-border Asian transaction and institutional structuring experience. Contributes judgment on Japan and pan-Asian corridor transactions, counterparty assessment, and structuring discipline.</p></div>
+<div class="jp-c"><p>国境を越えたアジアの取引および機関投資家向け構造化における豊富な経験を持つシニアアドバイザー。日本および汎アジア回廊の取引、カウンターパーティ評価、構造化規律に関する判断力を提供する。</p></div>
+</div>
+</div>
+
+<div class="lc lc-full">
+<div class="lc-avatar" data-initials="MT">
+<img src="images/takeda.jpg" alt="Masanori Takeda" loading="lazy">
+</div>
+<div class="lc-body">
+<div class="ro"><span class="en-c">Senior Director · Residential &amp; Commercial</span><span class="jp-c">シニアディレクター · 住宅・商業</span></div>
+<h3><span class="en-c">Masanori Takeda</span><span class="jp-c">武田 正徳</span></h3>
+<div class="tsub"><span class="en-c">Tokyo · Japan</span><span class="jp-c">東京 · 日本</span></div>
+<div class="en-c"><p>Senior operator in Japanese residential and commercial real estate markets. Brings transaction discretion, counterparty relationships, and executional judgment across prime real estate segments. Central to the firm's commercial real estate sourcing.</p></div>
+<div class="jp-c"><p>日本の住宅および商業不動産市場における上級オペレーター。プライム不動産セグメントにおける取引上の慎重さ、カウンターパーティとの関係、執行判断力を有する。会社の商業不動産発掘の中核を担う。</p></div>
+</div>
+</div>
+
+<div class="lc lc-full">
+<div class="lc-avatar" data-initials="TT">
+<img src="images/tanaka.jpg" alt="Toshihiro Tanaka" loading="lazy">
+</div>
+<div class="lc-body">
+<div class="ro"><span class="en-c">Senior Director · Execution &amp; Project Delivery</span><span class="jp-c">シニアディレクター · 執行・プロジェクト実行</span></div>
+<h3><span class="en-c">Toshihiro Tanaka</span><span class="jp-c">田中 敏博</span></h3>
+<div class="tsub"><span class="en-c">Tokyo · Japan</span><span class="jp-c">東京 · 日本</span></div>
+<div class="en-c"><p>Responsible for taking underwritten transactions through to closing and post-acquisition oversight: legal coordination, debt arrangement, operating-partner alignment, and milestone-gated capital deployment across the firm's pipeline.</p></div>
+<div class="jp-c"><p>審査を経た案件のクロージングおよび取得後の監督を担う — 法務調整、デットの手配、事業パートナーとの連携、そしてマイルストーン単位の資本投入をパイプラインを通じて管理する。</p></div>
+</div>
+</div>
+
+</div>
+</div></section>
+
+<section class="mod light"><div class="container">
+
+<div class="mh rv">
+<span class="ml"><span class="num">02 /</span><span class="en-c">Seoul Bench</span><span class="jp-c">ソウルチーム</span></span>
+<h2 class="mt"><span class="en-c">Seoul bench.</span><span class="jp-c">ソウルチーム。</span></h2>
+</div>
+<div class="mle rv rv-d1">
+<div class="en-c">North Asia coverage and institutional counsel, built deliberately. Korean capital markets experience paired with cross-border Japan corridor work.</div>
+<div class="jp-c">北アジアのカバレッジおよび機関投資家との連携を、慎重に構築しています。韓国の資本市場経験と、国境を越えた日本回廊の案件が組み合わされています。</div>
+</div>
+
+<div class="lg-v rv rv-d1">
+
+<div class="lc lc-full">
+<div class="lc-avatar" data-initials="PT">
+<img src="images/park.jpg" alt="Park TaeWoo" loading="lazy">
+</div>
+<div class="lc-body">
+<div class="ro"><span class="en-c">Head of Korea · North Asia Coverage</span><span class="jp-c">韓国責任者 · 北アジア統括</span></div>
+<h3><span class="en-c">Park TaeWoo</span><span class="jp-c">パク・テウ</span></h3>
+<div class="tsub"><span class="en-c">Seoul · Korea</span><span class="jp-c">ソウル · 韓国</span></div>
+<div class="en-c"><p>Fixed-income strategy, investment management, and business development across Korea's institutional financial sector. Senior roles at Hanwha Asset Management, Dunamu Investment Management, and Samsung Securities. Leads SYQA's North Asia coverage and cross-border Japan flows.</p></div>
+<div class="jp-c"><p>韓国の機関投資家向け金融セクターにおける債券戦略、運用、および事業開発。ハンファ・アセット・マネジメント、デュナム・インベストメント・マネジメント、サムスン証券でシニアポジションを歴任。SYQAの北アジア統括および国境を越えた日本向け資金フローを率いる。</p></div>
+</div>
+</div>
+
+</div>
+
+</div></section>
+
+<section class="mod"><div class="container">
+<div class="mh rv">
+<span class="ml"><span class="en-c">Continue</span><span class="jp-c">続きを読む</span></span>
+<h2 class="mt"><span class="en-c">More of the firm.</span><span class="jp-c">会社について、さらに。</span></h2>
+</div>
+<div class="xlink-grid">
+<a href="#firm" data-page-link="firm" class="xlink rv rv-d1">
+<div class="xlink-label"><span class="en-c">Firm</span><span class="jp-c">会社</span></div>
+<h3><span class="en-c">Who we are</span><span class="jp-c">我々について</span></h3>
+<p><span class="en-c">Corporate overview and foundation.</span><span class="jp-c">会社概要と基盤。</span></p>
+<span class="xlink-arrow"><span class="en-c">Read more →</span><span class="jp-c">詳しく見る →</span></span>
+</a>
+<a href="#focus" data-page-link="focus" class="xlink rv rv-d2">
+<div class="xlink-label"><span class="en-c">Focus</span><span class="jp-c">領域</span></div>
+<h3><span class="en-c">How we invest</span><span class="jp-c">投資領域</span></h3>
+<p><span class="en-c">Five areas, one standard.</span><span class="jp-c">五つの領域、一つの基準。</span></p>
+<span class="xlink-arrow"><span class="en-c">Read more →</span><span class="jp-c">詳しく見る →</span></span>
+</a>
+<a href="#contact" data-page-link="contact" class="xlink rv rv-d3">
+<div class="xlink-label"><span class="en-c">Contact</span><span class="jp-c">連絡</span></div>
+<h3><span class="en-c">Get in touch</span><span class="jp-c">お問い合わせ</span></h3>
+<p><span class="en-c">Direct, considered conversation.</span><span class="jp-c">直接的で、熟慮された対話を。</span></p>
+<span class="xlink-arrow"><span class="en-c">Read more →</span><span class="jp-c">詳しく見る →</span></span>
+</a>
+</div>
+</div></section></div>
+<div class="pg-wrap" data-page="news"><section class="pg-head"><div class="container">
+<div class="pg-head-eyebrow lf lf-1"><span class="en-c">News</span><span class="jp-c">ニュース</span></div>
+<h1 class="lf lf-2"><span class="en-c">Announcements,<br>published here.</span><span class="jp-c">お知らせ、<br>こちらに掲載。</span></h1>
+<div class="pg-head-sub lf lf-3">
+<div class="en-c">We publish sparingly, when there is something worth saying. Firm news, senior additions to the team, and material updates appear here.</div>
+<div class="jp-c">申し上げるべきことがある時にのみ、控えめに発信いたします。会社のお知らせ、シニアメンバーの参画、重要な更新は、こちらに掲載いたします。</div>
+</div>
+</div></section>
+
+<section class="mod"><div class="container">
+
+<!--
+  ===========================================================
+  NEWS ITEMS — How to add announcements:
+  ===========================================================
+  Remove the <div class="news-empty"> block below once you
+  have your first announcement. Then add <div class="news-item">
+  blocks in reverse chronological order (newest first):
+
+  <div class="news-item">
+    <div class="news-date">April 2026</div>
+    <div class="news-title">
+      <span class="en-c">Announcement title in English.</span>
+      <span class="jp-c">日本語でのお知らせ。</span>
+    </div>
+  </div>
+  ===========================================================
+-->
+
+<div class="news-wrap rv">
+
+<div class="news-empty">
+<div class="status"><span class="en-c">No announcements at this time</span><span class="jp-c">現在お知らせはございません</span></div>
+<h3><span class="en-c">The first announcements will appear here in due course.</span><span class="jp-c">最初のお知らせは、時期がまいりましたらこちらに掲載いたします。</span></h3>
+<p><span class="en-c">For direct inquiries, please write to us at hello@syqacapital.com.</span><span class="jp-c">直接のお問い合わせは、hello@syqacapital.com までご連絡ください。</span></p>
+</div>
+
+</div>
+</div></section>
+
+<!-- Cross-links -->
+
+<section class="mod alt"><div class="container">
+<div class="mh rv">
+<span class="ml"><span class="en-c">Continue</span><span class="jp-c">続きを読む</span></span>
+<h2 class="mt"><span class="en-c">More of the firm.</span><span class="jp-c">会社について、さらに。</span></h2>
+</div>
+<div class="xlink-grid">
+<a href="#firm" data-page-link="firm" class="xlink rv rv-d1">
+<div class="xlink-label"><span class="en-c">Firm</span><span class="jp-c">会社</span></div>
+<h3><span class="en-c">Who we are</span><span class="jp-c">我々について</span></h3>
+<p><span class="en-c">Corporate overview and story.</span><span class="jp-c">会社概要と沿革。</span></p>
+<span class="xlink-arrow"><span class="en-c">Read more →</span><span class="jp-c">詳しく見る →</span></span>
+</a>
+<a href="#focus" data-page-link="focus" class="xlink rv rv-d2">
+<div class="xlink-label"><span class="en-c">Focus</span><span class="jp-c">領域</span></div>
+<h3><span class="en-c">How we invest</span><span class="jp-c">投資領域</span></h3>
+<p><span class="en-c">Five areas, one standard.</span><span class="jp-c">五つの領域、一つの基準。</span></p>
+<span class="xlink-arrow"><span class="en-c">Read more →</span><span class="jp-c">詳しく見る →</span></span>
+</a>
+<a href="#contact" data-page-link="contact" class="xlink rv rv-d3">
+<div class="xlink-label"><span class="en-c">Contact</span><span class="jp-c">連絡</span></div>
+<h3><span class="en-c">Get in touch</span><span class="jp-c">お問い合わせ</span></h3>
+<p><span class="en-c">Direct, considered conversation.</span><span class="jp-c">直接的で、熟慮された対話を。</span></p>
+<span class="xlink-arrow"><span class="en-c">Read more →</span><span class="jp-c">詳しく見る →</span></span>
+</a>
+</div>
+</div></section></div>
+<div class="pg-wrap" data-page="contact"><section class="pg-head"><div class="container">
+<div class="pg-head-eyebrow lf lf-1"><span class="en-c">Contact</span><span class="jp-c">連絡</span></div>
+<h1 class="lf lf-2"><span class="en-c">Direct,<br>considered conversation.</span><span class="jp-c">直接的で、<br>熟慮された対話を。</span></h1>
+</div></section>
+
+<section class="mod"><div class="container">
+<div class="cg">
+<div class="rv">
+<div class="cl-l"><div class="en-c">For general inquiries, business introductions, or partnership discussions, please write to us directly. We read and respond to every message, carefully and without rush.</div><div class="jp-c">一般的なお問い合わせ、ビジネスのご紹介、パートナーシップに関するご相談は、直接ご連絡ください。すべてのメッセージを、急がず、丁寧にお読みしてお返事いたします。</div></div>
+<a href="mailto:hello@syqacapital.com" class="ce">hello@syqacapital.com</a>
+</div>
+<div class="cn rv rv-d1">
+<span class="lb"><span class="en-c">Registered Office</span><span class="jp-c">登記住所</span></span>
+<div class="en">SYQA Capital Co., Ltd.</div>
+<address><span class="en-c">Marunouchi Nijubashi Building 2F<br>3-2-2 Marunouchi, Chiyoda-ku<br>Tokyo 100-0005, Japan</span><span class="jp-c">〒100-0005<br>東京都千代田区丸の内3丁目2番2号<br>丸の内二重橋ビル2階</span></address>
+</div>
+</div>
+</div></section></div>
+<div class="pg-wrap" data-page="legal"><section class="pg-head"><div class="container">
+<div class="pg-head-eyebrow lf lf-1"><span class="en-c">Legal &amp; Privacy</span><span class="jp-c">法的事項・プライバシー</span></div>
+<h1 class="lf lf-2"><span class="en-c">Legal notice.</span><span class="jp-c">法的事項。</span></h1>
+</div></section>
+
+<section class="mod"><div class="container">
+<div class="lb-body rv">
+<div class="en-c">
+<h4>Corporate Information</h4>
+<p>This website provides general corporate information about <strong>SYQA Capital Co., Ltd.</strong>, a company registered in Japan. It is informational only.</p>
+
+<h4>No Offer of Securities</h4>
+<p>Nothing on this website constitutes an offer, solicitation, or recommendation to buy or sell any security, investment product, or financial instrument. <strong>SYQA Capital does not hold itself out as a registered financial instruments business operator</strong> under Japan's Financial Instruments and Exchange Act (FIEA), and no investment services are offered through this website.</p>
+
+<h4>No Investment Advice</h4>
+<p>Information on this website does not constitute investment, legal, tax, or other professional advice. Visitors should consult qualified professionals before making any decisions based on information presented here.</p>
+
+<h4>Forward-Looking Statements</h4>
+<p>Any forward-looking statements reflect current expectations only. Actual outcomes may differ materially. SYQA Capital undertakes no obligation to update such statements.</p>
+
+<h4>Privacy &amp; Data Handling</h4>
+<p>This website does not use tracking cookies, analytics scripts, or third-party advertising. We collect no personal information from visitors browsing this site. If you contact us via email, any information you share is used solely to respond to your inquiry, handled in accordance with Japan's <strong>Act on the Protection of Personal Information (APPI)</strong>, and not shared with third parties without your consent.</p>
+
+<h4>No Reliance</h4>
+<p>While we aim for accuracy, SYQA Capital makes no warranty as to the completeness or timeliness of information on this website and accepts no liability for any loss arising from reliance on its contents.</p>
+
+<h4>Intellectual Property</h4>
+<p>All content on this website — including text, typography, layout, and marks — is the property of SYQA Capital Co., Ltd. unless otherwise noted. Unauthorised reproduction is prohibited.</p>
+
+<h4>Jurisdiction</h4>
+<p>This website is operated from Japan. Any disputes arising in connection with this website shall be governed by the laws of Japan.</p>
+
+<h4>Contact Regarding Legal Matters</h4>
+<p>For questions relating to this notice, please write to <strong>hello@syqacapital.com</strong>.</p>
+
+<h4>Copyright</h4>
+<p>© 2026 SYQA Capital Co., Ltd. All rights reserved.</p>
+</div>
+
+<div class="jp-c">
+<h4>会社情報</h4>
+<p>本ウェブサイトは、日本国にて登記された<strong>SYQA Capital株式会社</strong>に関する一般的な会社情報を提供するものです。情報提供のみを目的としています。</p>
+
+<h4>有価証券の勧誘ではありません</h4>
+<p>本ウェブサイト上のいかなる情報も、有価証券、投資商品、金融商品の売買の申込み、勧誘、または推奨を構成するものではありません。<strong>SYQA Capitalは、金融商品取引法（FIEA）に基づく金融商品取引業者としての登録を有しておらず</strong>、本ウェブサイトを通じた投資サービスの提供は行っておりません。</p>
+
+<h4>投資助言ではありません</h4>
+<p>本ウェブサイト上の情報は、投資、法務、税務、その他の専門的助言を構成するものではありません。訪問者は、本サイト上の情報に基づく判断を行う前に、資格のある専門家にご相談ください。</p>
+
+<h4>将来予測に関する記述</h4>
+<p>将来予測に関する記述は、現時点の予測のみを反映しています。実際の結果は大きく異なる可能性があります。SYQA Capitalは、かかる記述を更新する義務を負いません。</p>
+
+<h4>プライバシーおよびデータの取扱い</h4>
+<p>本ウェブサイトでは、トラッキングクッキー、アナリティクス・スクリプト、第三者広告を使用していません。訪問者の閲覧に関する個人情報は収集しておりません。メールにてご連絡いただいた場合、お客様が共有された情報は、お問い合わせへの返信のみに使用し、日本の<strong>個人情報保護法（APPI）</strong>に従って取り扱い、お客様の同意なく第三者と共有することはありません。</p>
+
+<h4>非依拠</h4>
+<p>正確性を期しておりますが、SYQA Capitalは本ウェブサイト上の情報の完全性または適時性について保証せず、その内容への依拠により生じたいかなる損失についても責任を負いません。</p>
+
+<h4>知的財産</h4>
+<p>本ウェブサイト上のすべてのコンテンツ — テキスト、タイポグラフィ、レイアウト、マークを含む — は、特に記載のない限り、SYQA Capital株式会社に帰属します。無断転載を禁じます。</p>
+
+<h4>準拠法</h4>
+<p>本ウェブサイトは日本国内から運営されております。本ウェブサイトに関して生じるいかなる紛争も、日本国法に準拠するものとします。</p>
+
+<h4>法的事項に関するお問い合わせ</h4>
+<p>本事項に関するご質問は、<strong>hello@syqacapital.com</strong>までご連絡ください。</p>
+
+<h4>著作権</h4>
+<p>© 2026 SYQA Capital株式会社。無断転載を禁じます。</p>
+</div>
+</div>
+</div></section></div>
 
 <footer class="ft"><div class="container">
 <div class="ftp">
-<div class="fbb"><a href="index.html" class="syqa"><span class="syqa-wm">SYQA</span><span class="syqa-dot"></span></a>
-<p><span class="en-c">An Asia-focused investment firm. Japan at the core.</span><span class="jp-c">アジアに注力する投資会社。その中核に、日本を。</span></p>
+<div class="fbb"><a href="#home" data-page-link="home" class="syqa"><span class="syqa-wm">SYQA</span><span class="syqa-dot"></span></a>
+<p><span class="en-c">An Asia-focused investment firm. Japan at the core.</span><span class="jp-c">アジアを軸とする投資会社。中核に、日本を。</span></p>
 </div>
 <div class="fa-add"><span class="lb"><span class="en-c">Registered Office</span><span class="jp-c">登記住所</span></span>
 <span class="en">SYQA Capital Co., Ltd.</span>
@@ -193,12 +1090,12 @@
 <span class="jp-c">〒100-0005<br>東京都千代田区丸の内3丁目2番2号<br>丸の内二重橋ビル2階</span>
 </div>
 <div class="fn-f"><span class="lb"><span class="en-c">Navigate</span><span class="jp-c">ナビゲーション</span></span>
-<a href="firm.html" data-en="Firm" data-jp="会社">Firm</a>
-<a href="focus.html" data-en="Focus" data-jp="領域">Focus</a>
-<a href="leadership.html" data-en="Leadership" data-jp="代表">Leadership</a>
-<a href="news.html" data-en="News" data-jp="ニュース">News</a>
-<a href="contact.html" data-en="Contact" data-jp="連絡">Contact</a>
-<a href="legal.html" data-en="Legal" data-jp="法務">Legal</a>
+<a href="#firm" data-page-link="firm" data-en="Firm" data-jp="会社">Firm</a>
+<a href="#focus" data-page-link="focus" data-en="Focus" data-jp="領域">Focus</a>
+<a href="#leadership" data-page-link="leadership" data-en="Leadership" data-jp="代表">Leadership</a>
+<a href="#news" data-page-link="news" data-en="News" data-jp="ニュース">News</a>
+<a href="#contact" data-page-link="contact" data-en="Contact" data-jp="連絡">Contact</a>
+<a href="#legal" data-page-link="legal" data-en="Legal" data-jp="法務">Legal</a>
 </div>
 </div>
 <div class="fbt">
@@ -207,6 +1104,131 @@
 </div>
 </div></footer>
 
-<script src="script.js"></script>
+<script>
+// SYQA Capital — Shared scripts. Used on every page.
+
+(function(){
+  // Nav scroll state
+  const n = document.getElementById('nav');
+  if(n){
+    const os = () => {
+      if(window.scrollY > 20) n.classList.add('scr');
+      else n.classList.remove('scr');
+    };
+    window.addEventListener('scroll', os, {passive:true});
+    os();
+  }
+
+  // Mobile burger menu
+  const b = document.getElementById('bg');
+  const nl = document.getElementById('nl');
+  if(b && nl){
+    b.addEventListener('click', () => {
+      nl.classList.toggle('open');
+      b.classList.toggle('open');
+    });
+    nl.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        nl.classList.remove('open');
+        b.classList.remove('open');
+      });
+    });
+  }
+
+  // Language toggle — persists across pages via localStorage
+  const be = document.getElementById('bEN');
+  const bj = document.getElementById('bJP');
+  const setLang = (l) => {
+    if(l === 'jp'){
+      document.body.classList.add('jp');
+      document.documentElement.lang = 'ja';
+      if(bj) bj.classList.add('active');
+      if(be) be.classList.remove('active');
+      document.querySelectorAll('[data-jp]').forEach(e => e.textContent = e.dataset.jp);
+    } else {
+      document.body.classList.remove('jp');
+      document.documentElement.lang = 'en';
+      if(be) be.classList.add('active');
+      if(bj) bj.classList.remove('active');
+      document.querySelectorAll('[data-en]').forEach(e => e.textContent = e.dataset.en);
+    }
+    try{ localStorage.setItem('syqa-lang', l); } catch(e){}
+  };
+  if(be) be.addEventListener('click', () => setLang('en'));
+  if(bj) bj.addEventListener('click', () => setLang('jp'));
+  try{
+    const sv = localStorage.getItem('syqa-lang');
+    if(sv === 'jp') setLang('jp');
+  } catch(e){}
+
+  // Reveal animations on scroll
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((es) => {
+      es.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.1, rootMargin: '0px 0px -60px 0px'});
+    document.querySelectorAll('.rv').forEach(e => io.observe(e));
+  } else {
+    // Fallback: just show everything
+    document.querySelectorAll('.rv').forEach(e => e.classList.add('in'));
+  }
+})();
+
+</script>
+
+<script>
+
+// Preview router: show one page at a time based on URL hash
+(function(){
+  const pages = document.querySelectorAll('.pg-wrap');
+  const navLinks = document.querySelectorAll('[data-page-link]');
+  
+  function showPage(name){
+    pages.forEach(p => {
+      p.style.display = (p.dataset.page === name) ? 'block' : 'none';
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.dataset.pageLink === name);
+    });
+    // Scroll to top on page change
+    window.scrollTo(0, 0);
+    // Re-trigger reveal observers for newly visible content
+    document.querySelectorAll('.rv').forEach(e => e.classList.add('in'));
+  }
+  
+  function currentPage(){
+    const h = window.location.hash.replace('#', '') || 'home';
+    return ['home','firm','focus','leadership','news','contact','legal'].includes(h) ? h : 'home';
+  }
+  
+  // Intercept clicks on internal page links
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('[data-page-link]');
+    if(link){
+      e.preventDefault();
+      const target = link.dataset.pageLink;
+      window.location.hash = target;
+      showPage(target);
+      // Close mobile menu if open
+      const nl = document.getElementById('nl');
+      const bg = document.getElementById('bg');
+      if(nl) nl.classList.remove('open');
+      if(bg) bg.classList.remove('open');
+    }
+  });
+  
+  // Handle browser back/forward
+  window.addEventListener('hashchange', () => showPage(currentPage()));
+  
+  // Show initial page
+  showPage(currentPage());
+})();
+
+</script>
+
 </body>
 </html>
