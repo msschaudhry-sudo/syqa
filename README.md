@@ -1,4 +1,4 @@
-# SYQA Capital — Website
+# Syqa Capital
 
 Corporate website for SYQA Capital Co., Ltd.
 An Asia-focused investment firm. Japan at the core.
